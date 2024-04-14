@@ -1,6 +1,6 @@
 module RideRequest = Shell_RideRequest
 
-let origin =  RideRequest.RequestAddress.make("56 rue de contrecoeur", "Montreal")
+let origin =  RideRequest.RequestAddress.make("0000 rue de contrecoeur", "Montreal")
 
 let destination =  RideRequest.RequestAddress.make("Montréal-Pierre Elliott Trudeau International Airport", "Montreal")
 

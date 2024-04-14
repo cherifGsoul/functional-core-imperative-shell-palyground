@@ -2,7 +2,7 @@
 
 import * as Shell_RideRequest from "./shell/Shell_RideRequest.res.js";
 
-var origin = Shell_RideRequest.RequestAddress.make("56 rue de contrecoeur", "Montreal");
+var origin = Shell_RideRequest.RequestAddress.make("0000 rue de contrecoeur", "Montreal");
 
 var destination = Shell_RideRequest.RequestAddress.make("Montréal-Pierre Elliott Trudeau International Airport", "Montreal");
 
