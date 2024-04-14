@@ -1,0 +1,50 @@
+rescript = 1
+g_finger := /home/cherif/Dev/rescript-pg/re-fcis/node_modules/@rescript/core/lib/ocaml/install.stamp
+rule astj
+  command = /home/cherif/Dev/rescript-pg/re-fcis/node_modules/rescript/linux/bsc.exe  -bs-v 11.0.1 -uncurried -open RescriptCore -absname -bs-ast -o $out $i
+o src/shell/Shell_RideRequest.ast : astj ../../src/shell/Shell_RideRequest.res
+rule deps
+  command = /home/cherif/Dev/rescript-pg/re-fcis/node_modules/rescript/linux/bsb_helper.exe -hash a52d911b63dbfc9d2004fa3dc06f7e69 $in
+  restat = 1
+o src/shell/Shell_RideRequest.d : deps src/shell/Shell_RideRequest.ast src/shell/Shell_RideRequest.iast
+o src/shell/Shell_RideRequest.iast : astj ../../src/shell/Shell_RideRequest.resi
+rule mi
+  command = /home/cherif/Dev/rescript-pg/re-fcis/node_modules/rescript/linux/bsc.exe -I src/core -I src/shell -I src -I /home/cherif/Dev/rescript-pg/re-fcis/node_modules/@rescript/core/lib/ocaml -open RescriptCore  -uncurried -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/shell/Shell_RideRequest.cmi : mi src/shell/Shell_RideRequest.iast
+rule mj
+  command = /home/cherif/Dev/rescript-pg/re-fcis/node_modules/rescript/linux/bsc.exe -bs-read-cmi -I src/core -I src/shell -I src -I /home/cherif/Dev/rescript-pg/re-fcis/node_modules/@rescript/core/lib/ocaml -open RescriptCore  -uncurried -bs-package-name your-project-name -bs-package-output es6:$in_d:.res.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/shell/Shell_RideRequest.cmj ../../src/shell/Shell_RideRequest.res.js : mj src/shell/Shell_RideRequest.ast src/shell/Shell_RideRequest.cmi
+o src/core/Core_Fare.ast : astj ../../src/core/Core_Fare.res
+o src/core/Core_Fare.d : deps src/core/Core_Fare.ast src/core/Core_Fare.iast
+o src/core/Core_Fare.iast : astj ../../src/core/Core_Fare.resi
+o src/core/Core_Fare.cmi : mi src/core/Core_Fare.iast
+o src/core/Core_Fare.cmj ../../src/core/Core_Fare.res.js : mj src/core/Core_Fare.ast src/core/Core_Fare.cmi
+o src/core/Core_Route.ast : astj ../../src/core/Core_Route.res
+o src/core/Core_Route.d : deps src/core/Core_Route.ast src/core/Core_Route.iast
+o src/core/Core_Route.iast : astj ../../src/core/Core_Route.resi
+o src/core/Core_Route.cmi : mi src/core/Core_Route.iast
+o src/core/Core_Route.cmj ../../src/core/Core_Route.res.js : mj src/core/Core_Route.ast src/core/Core_Route.cmi
+o src/core/Core_Street.ast : astj ../../src/core/Core_Street.res
+o src/core/Core_Street.d : deps src/core/Core_Street.ast src/core/Core_Street.iast
+o src/core/Core_Street.iast : astj ../../src/core/Core_Street.resi
+o src/core/Core_Street.cmi : mi src/core/Core_Street.iast
+o src/core/Core_Street.cmj ../../src/core/Core_Street.res.js : mj src/core/Core_Street.ast src/core/Core_Street.cmi
+o src/core/Core_Address.ast : astj ../../src/core/Core_Address.res
+o src/core/Core_Address.d : deps src/core/Core_Address.ast src/core/Core_Address.iast
+o src/core/Core_Address.iast : astj ../../src/core/Core_Address.resi
+o src/core/Core_Address.cmi : mi src/core/Core_Address.iast
+o src/core/Core_Address.cmj ../../src/core/Core_Address.res.js : mj src/core/Core_Address.ast src/core/Core_Address.cmi
+o src/core/Core_Distance.ast : astj ../../src/core/Core_Distance.res
+o src/core/Core_Distance.d : deps src/core/Core_Distance.ast src/core/Core_Distance.iast
+o src/core/Core_Distance.iast : astj ../../src/core/Core_Distance.resi
+o src/core/Core_Distance.cmi : mi src/core/Core_Distance.iast
+o src/core/Core_Distance.cmj ../../src/core/Core_Distance.res.js : mj src/core/Core_Distance.ast src/core/Core_Distance.cmi
+o src/core/Core_ServedCity.ast : astj ../../src/core/Core_ServedCity.res
+o src/core/Core_ServedCity.d : deps src/core/Core_ServedCity.ast src/core/Core_ServedCity.iast
+o src/core/Core_ServedCity.iast : astj ../../src/core/Core_ServedCity.resi
+o src/core/Core_ServedCity.cmi : mi src/core/Core_ServedCity.iast
+o src/core/Core_ServedCity.cmj ../../src/core/Core_ServedCity.res.js : mj src/core/Core_ServedCity.ast src/core/Core_ServedCity.cmi

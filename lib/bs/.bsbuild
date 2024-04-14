@@ -1,0 +1,11 @@
+7
+Core_Fare
+Core_Route
+Core_Street
+Core_Address
+Core_Distance
+Core_ServedCity
+Shell_RideRequest
+src/core	src/shell	
+1
+0
