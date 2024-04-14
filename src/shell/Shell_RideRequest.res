@@ -16,8 +16,8 @@ module DB = {
 
   let cities: t = []
 
-  let add = (~city: ServedCity.t) => cities->Array.push(city)
-  let getCities = () => cities
+  let add = async (~city: ServedCity.t) => cities->Array.push(city)
+  let getCities = async () => cities
 
 }
 
@@ -31,7 +31,7 @@ let make = (origin, destination) => ({
   destination
 })
 
-let handle = (request: t) =>  {
+let handle = async (request: t) =>  {
   let originCity = request.destination.city->ServedCity.fromString
   let destinationCity = request.destination.city->ServedCity.fromString
 
@@ -47,30 +47,3 @@ let handle = (request: t) =>  {
 
   
 }
-
-
-let origin =  RequestAddress.make("56 rue de contrecoeur", "Montreal")
-
-let destination =  RequestAddress.make("Montréal-Pierre Elliott Trudeau International Airport", "Montreal")
-
-
-let request = make(origin, destination)
-
-handle(request)
-
-
-// module Person = {
-//   type t = {
-//     fname: string,
-//     lname: string
-//   }
-
-//   let make = (fname, lname) => ({
-//     fname,
-//     lname
-//   })
-// }
-
-
-// let person = Person.make("cherif", "bouchelaghem")
-// Js.log(person)

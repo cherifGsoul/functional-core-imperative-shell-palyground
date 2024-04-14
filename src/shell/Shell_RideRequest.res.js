@@ -17,11 +17,11 @@ var RequestAddress = {
 
 var cities = [];
 
-function add(city) {
+async function add(city) {
   cities.push(city);
 }
 
-function getCities() {
+async function getCities() {
   return cities;
 }
 
@@ -32,7 +32,7 @@ function make$1(origin, destination) {
         };
 }
 
-function handle(request) {
+async function handle(request) {
   var originCity = Core_ServedCity.fromString(request.destination.city);
   Core_ServedCity.fromString(request.destination.city);
   var originCityStr;
@@ -41,23 +41,6 @@ function handle(request) {
   Core_Street.fromString(request.destination.street);
   Core_Street.fromString(request.destination.street);
 }
-
-var origin = {
-  street: "56 rue de contrecoeur",
-  city: "Montreal"
-};
-
-var destination = {
-  street: "Montréal-Pierre Elliott Trudeau International Airport",
-  city: "Montreal"
-};
-
-var request = {
-  origin: origin,
-  destination: destination
-};
-
-handle(request);
 
 var ServedCity;
 
@@ -73,4 +56,4 @@ export {
   make$1 as make,
   handle ,
 }
-/*  Not a pure module */
+/* No side effect */

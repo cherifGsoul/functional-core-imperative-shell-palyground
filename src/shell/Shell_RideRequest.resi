@@ -8,12 +8,12 @@ module RequestAddress: {
 module DB: {
   type t
 
-  let add: (~city: ServedCity.t) => unit
-  let getCities: () => t
+  let add: (~city: ServedCity.t) => promise<unit>
+  let getCities: () => promise<t>
 }
 
 type t 
 
 let make: (RequestAddress.t, RequestAddress.t) => t
 
-let handle: (t) => unit
+let handle: (t) => promise<unit>
