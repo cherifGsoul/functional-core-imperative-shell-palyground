@@ -1,1 +1,0 @@
-{ "dirs" : [ "src" , "src/shell" , "src/core" ] , "pkgs" : [ [ "@rescript/core" , "/home/cherif/Dev/rescript-pg/re-fcis/node_modules/@rescript/core" ] ] , "generated" : [] }
