@@ -9,3 +9,6 @@ let between = (~origin: Address.t, ~destination: Address.t) => ({
   origin,
   destination
 })
+
+let origin = (route) => route.origin
+let destination = (route) => route.destination

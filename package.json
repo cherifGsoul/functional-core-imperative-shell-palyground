@@ -14,5 +14,9 @@
   "dependencies": {
     "@rescript/core": "^1.2.0",
     "rescript": "^11.0.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }

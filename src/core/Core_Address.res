@@ -6,7 +6,10 @@ type t = {
   city: ServedCity.t
 }
 
-let make = (~street: Street.t, ~city: ServedCity.t) => ({
+let make = (street, city) => ({
   street,
   city
 })
+
+
+let city = (address) => address.city

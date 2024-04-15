@@ -15,7 +15,12 @@ function fromNumber(distance) {
   }
 }
 
+function toNumber(distance) {
+  return distance;
+}
+
 export {
   fromNumber ,
+  toNumber ,
 }
 /* No side effect */

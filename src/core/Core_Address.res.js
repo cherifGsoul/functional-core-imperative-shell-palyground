@@ -8,6 +8,10 @@ function make(street, city) {
         };
 }
 
+function city(address) {
+  return address.city;
+}
+
 var Street;
 
 var ServedCity;
@@ -16,5 +20,6 @@ export {
   Street ,
   ServedCity ,
   make ,
+  city ,
 }
 /* No side effect */

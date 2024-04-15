@@ -8,10 +8,20 @@ function between(origin, destination) {
         };
 }
 
+function origin(route) {
+  return route.origin;
+}
+
+function destination(route) {
+  return route.destination;
+}
+
 var Address;
 
 export {
   Address ,
   between ,
+  origin ,
+  destination ,
 }
 /* No side effect */

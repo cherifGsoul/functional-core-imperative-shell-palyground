@@ -15,7 +15,22 @@ function fromNumber(fare) {
   }
 }
 
+function toNumber(fare) {
+  return fare;
+}
+
+function multiply(fare, times) {
+  return fromNumber(Math.imul(fare, times));
+}
+
+function add(fare, other) {
+  return fromNumber(fare + other | 0);
+}
+
 export {
   fromNumber ,
+  multiply ,
+  add ,
+  toNumber ,
 }
 /* No side effect */

@@ -1,4 +1,18 @@
 {
+  "gentypeconfig": {
+    "module": "es6",
+    "moduleResolution": "node",
+    "generatedFileExtension": ".gen.ts",
+    "importPath": "relative",
+    "language": "typescript",
+    "exportInterface": true,
+    "shims": {
+      "Js": "Js"
+    },
+    "debug": {
+      "all": false
+    }
+  },
   "name": "your-project-name",
   "sources": [
     {

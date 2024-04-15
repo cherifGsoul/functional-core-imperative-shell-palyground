@@ -7,3 +7,4 @@ let fromNumber = (~distance: int) => {
   }
 }
 
+let toNumber = (distance) => distance
